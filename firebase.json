@@ -37,6 +37,7 @@
   },
   "hosting": {
     "public": "dist",
+    "site": "hotel-vue-3",
     "ignore": [
       "firebase.json",
       "**/.*",
