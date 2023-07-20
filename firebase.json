@@ -1,47 +1,30 @@
 {
-  "functions": [
-    {
-      "source": "functions",
-      "codebase": "default",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log",
-        ".idea"
-      ],
-      "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint",
-        "npm --prefix \"$RESOURCE_DIR\" run build"
-      ]
-    }
-  ],
+  "functions": {
+    "source": "functions"
+  },
   "storage": {
     "rules": "storage.rules"
   },
   "emulators": {
+    "auth": {
+      "port": 9099
+    },
     "functions": {
       "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "storage": {
+      "port": 9199
     },
     "ui": {
       "enabled": true
     },
-    "singleProjectMode": true,
-    "storage": {
-      "port": 9199
-    }
+    "singleProjectMode": true
   },
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "hosting": {
-    "public": "dist",
-    "site": "hotel-vue-3",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
+  "extensions": {}
 }
